@@ -1,0 +1,24 @@
+  {
+    "name": "Soundcraft UI MIDI Extension",
+    "version": "0.1",
+    "description": "Connect a Soundcraft UI to any MIDI Controller!",
+  "permissions": ["activeTab", "declarativeContent", "storage" ,
+    "tabs"],
+    "web_accessible_resources": [
+      "script.js"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+
+  "content_scripts": [
+      {
+        "matches": ["https://www.soundcraft.com/ui24-software-demo/*",  "http://ui-mixer.io/*"],
+        "js": ["contentScript.js"],
+        "run_at": "document_end" 
+      }
+    ],
+	"options_page": "options.html",
+    "manifest_version": 2
+  }
